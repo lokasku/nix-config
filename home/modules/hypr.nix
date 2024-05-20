@@ -92,7 +92,9 @@
       windowrule = noblur, ^(brave)$
       windowrule = noblur, ^(code)$
       windowrule = opaque, ^(rofi)$
-      # windowrulev2 = rounding 20, floating:1
+      windowrulev2 = noshadow, floating:1
+      windowrulev2 = float, center, title:^(popup)$
+      # windowrulev2 = rounding 20, floating:true
 
       # Workspaces
       binde = SUPER, h, workspace, -1
@@ -138,10 +140,10 @@
       }
 
       general {
-          gaps_in=3
+          gaps_in=2
           gaps_out=1
 
-          col.active_border=0xff444444
+          col.active_border=0xff3d3d3d
           col.inactive_border=0xff303030
 
           no_focus_fallback = true
@@ -156,10 +158,10 @@
       decoration {
           rounding=5
           drop_shadow=false
-          # shadow_range = 10
+          shadow_range = 10
           # shadow_scale = 1.5
           dim_inactive=true
-          dim_strength=0.2
+          dim_strength=0.19
 
           blur {
             size = 16

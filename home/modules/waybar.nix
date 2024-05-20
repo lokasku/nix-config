@@ -7,7 +7,7 @@
       height = 30;
       output = ["eDP-1"];
       modules-left = [ "hyprland/workspaces" ];
-      modules-center = [ "hyprland/window" ];
+      # modules-center = [ "hyprland/window" ];
       # modules-right = [ "hyprland/language" "backlight" ];
 
       "hyprland/workspaces" = {
@@ -34,7 +34,7 @@
     style = ''
     * {
         background-color: transparent;
-        margin: 2px 5px 2px 2px;
+        margin: 2px 5px 2px 3px;
     }
     #workspaces button {
         font-family: "PragmataPro Liga";

@@ -13,9 +13,5 @@
     userName = "Lokasku";
     delta.enable = true;
     ignores = [ "*.swp" ];
-    extraConfig = ''
-    [safe]
-        directory = /home/lokasku/nix-config
-    '';
   };
 }
