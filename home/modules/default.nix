@@ -1,6 +1,6 @@
 {
   imports = [
-    ./xmonad
+    # ./xmonad
 
     ./alacritty.nix
     ./git.nix
@@ -12,7 +12,9 @@
     ./kakoune/kakoune.nix
     ./gtk.nix
     ./rofi.nix
-    ./polybar.nix
+    # ./polybar.nix
+    ./hyprlock.nix
+    ./waybar.nix
     ./emacs/emacs.nix
     ./vscode.nix
     ./hypr.nix

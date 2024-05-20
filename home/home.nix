@@ -6,7 +6,7 @@
     nixpkgs.config.allowUnfree = true;
 
     imports = [
-      ./config
+      ./modules
     ];
 
     home = {
@@ -15,31 +15,27 @@
       stateVersion = "23.11";
       packages = with pkgs; [
         cargo
-        ghc
-        cabal-install
-        haskellPackages.xmonad
         prismlauncher
-
-        (pkgs.callPackage ./config/pragmata.nix {})
+        (pkgs.callPackage ./modules/pragmata.nix {})
         (nerdfonts.override {
           fonts = ["MPlus"];
         })
-        # mplus-outline-fonts.githubRelease
-
         neofetch
         brightnessctl
+        swaybg
+        sway-contrib.grimshot
       ];
     
       sessionVariables.EDITOR = "kak";
     };
 
-    xsession = {
-      enable = true;
-    };
+    xsession.enable = true;
 
     fonts.fontconfig.enable = true;
 
     programs = {
+      waybar.enable = true;
+      hyprlock.enable = true;
       emacs.enable = false;
       vscode.enable = true;
       zathura.enable = true;
@@ -64,6 +60,6 @@
       redshift.enable = true;
       picom.enable = false;
       flameshot.enable = true;
-      polybar.enable = true;
+      # polybar.enable = true;
     };
   }

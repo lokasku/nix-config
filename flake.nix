@@ -8,13 +8,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
   };
 
   outputs =
     { nixpkgs, home-manager, ... }@inputs:
     {
       nixosConfigurations.nixsku = nixpkgs.lib.nixosSystem {
-        modules = [ ./system/config.nix ];
+        modules = [ ./system ];
 
         specialArgs = {
           inherit inputs;
@@ -29,7 +33,7 @@
           inherit inputs;
         };
 
-        modules = [ ./home/home.nix ];
+        modules = [ ./home ];
       };
     };
 }

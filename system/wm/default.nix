@@ -1,9 +1,8 @@
-{ ... }:
-  {
-    services.xserver.enable = true;
+{
+  services.xserver.enable = true;
 
-    imports = [
-      ./hypr.nix
-      ./xmonad.nix
-    ];
-  }
+  imports = [
+    ./hypr.nix
+    # ./xmonad.nix
+  ];
+}

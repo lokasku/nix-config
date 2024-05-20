@@ -31,7 +31,8 @@
               width = "100%";
               height = "30";
 
-              fixed-center = "true";
+              # fixed-center = "true";
+              layer = "top";
               # background = "191919";
               background = "151515";
               foreground = "aaffffff";
