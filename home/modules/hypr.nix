@@ -23,7 +23,7 @@
       env = __GLX_VENDOR_LIBRARY_NAME,nvidia
       env = LIBVA_DRIVER_NAME,nvidia
 
-      # exec-once=swaybg -i ~/wallpapers/rog.jpg
+      # exec-once=swaybg -i ~/wallpapers/grad.png
       # exec-once=waybar
 
       # Submaps
@@ -40,7 +40,18 @@
 
       # Misc
       bind = , Print, exec, grimshot copy area
-      bind = SUPER, q, exit,
+
+      binde = , XF86AudioRaiseVolume, exec, pamixer -u && pamixer -i 2
+      binde = , XF86AudioLowerVolume, exec, pamixer -u && pamixer -d 2
+
+      binde = , XF86MonBrightnessUp, exec, brightnessctl s 5%+
+      binde = , XF86MonBrightnessDown, exec, brightnessctl s 5%-
+
+      binde = , XF86KbdBrightnessUp, exec, brightnessctl --device 'asus::kbd_backlight' s 1+
+      binde = , XF86KbdBrightnessDown, exec, brightnessctl --device 'asus::kbd_backlight' s 1-
+
+      bind = SUPER, q, exec, poweroff
+      bind = SUPER, r, exec, reboot
       bind = ALT, x, killactive,
       bind = ALT, f, togglefloating, active
 
@@ -128,7 +139,7 @@
 
       general {
           gaps_in=3
-          gaps_out=2
+          gaps_out=1
 
           col.active_border=0xff444444
           col.inactive_border=0xff303030
@@ -145,11 +156,16 @@
       decoration {
           rounding=5
           drop_shadow=false
+          # shadow_range = 10
+          # shadow_scale = 1.5
           dim_inactive=true
-          dim_strength=0.18
+          dim_strength=0.2
 
           blur {
-            enabled = true
+            size = 16
+            xray = true
+            noise = 0.04
+            brightness = 1.3
             popups = true
           }
       }
@@ -168,8 +184,4 @@
       }
       '';
     };
-    home.file."~/.config/hypr/hyprpaper.conf".text = ''
-    preload = ~/Downloads/apple.jpg
-    wallpaper = ,~/Downloads/apple.jpg
-    '';
   }

@@ -6,28 +6,57 @@
       position = "top";
       height = 30;
       output = ["eDP-1"];
-      module-left = [ "hyprland/workspaces" ];
+      modules-left = [ "hyprland/workspaces" ];
+      modules-center = [ "hyprland/window" ];
+      # modules-right = [ "hyprland/language" "backlight" ];
 
       "hyprland/workspaces" = {
+        format = "/";
         all-outputs = true;
-        format = "{name}:{icon}";
+      };
 
-        format-icons = {
-          "1" = "1";
-          "2" = "2";
-          "3" = "3";
-          "4" = "4";
-          "5" = "5";
-          "active" = "A";
-          "default" = "D";
+      "hyprland/window" = {
+        format = "{initialTitle}";
+        rewrite = {
+          "(.*) - Brave" = "Brave";
         };
-        persistent-workspaces = {};
+      };
+      "hyprland/language" = {
+        format = "{}";
+        format-en = "EN";
+        format-fr = "FR";
+      };
+      "backlight" = {
+         device = "intel_backlight";
+         format = "percent";
       };
     }];
     style = ''
-    #workspaces button.active {
-        background-color: #bbff00;
-        color: red;
+    * {
+        background-color: transparent;
+        margin: 2px 5px 2px 2px;
+    }
+    #workspaces button {
+        font-family: "PragmataPro Liga";
+        font-size: 14px;
+        color: #808080;
+        padding: 0;
+        margin-right: 12px;
+    }
+    #workspaces button.visible {
+        color: cyan;
+    }
+    #workspaces button.empty {
+        color: #d6d6d6;
+    }
+
+    #window {
+        font-size: 15px;
+    }
+
+    #language {
+        font-weight: bold;
+        color: #d6d6d6;
     }
     '';
   };

@@ -15,7 +15,7 @@
     ignores = [ "*.swp" ];
     extraConfig = ''
     [safe]
-        directory = /etc/nixos
+        directory = /home/lokasku/nix-config
     '';
   };
 }
