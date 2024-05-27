@@ -41,9 +41,6 @@
       # Misc
       bind = , Print, exec, grimshot copy area
 
-      binde = , XF86AudioRaiseVolume, exec, pamixer -u && pamixer -i 2
-      binde = , XF86AudioLowerVolume, exec, pamixer -u && pamixer -d 2
-
       binde = , XF86MonBrightnessUp, exec, brightnessctl s 5%+
       binde = , XF86MonBrightnessDown, exec, brightnessctl s 5%-
 
