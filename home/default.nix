@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
   {
     nixpkgs.config.allowUnfree = true;
 
@@ -22,11 +19,12 @@
         })
         neofetch
         brightnessctl
-        swaybg
         sway-contrib.grimshot
+        wl-clipboard
+        grim slurp
       ];
     
-      sessionVariables.EDITOR = "kak";
+      sessionVariables.EDITOR = "code";
     };
 
     xsession.enable = true;
@@ -36,13 +34,11 @@
     programs = {
       waybar.enable = true;
       hyprlock.enable = true;
-      emacs.enable = false;
       vscode.enable = true;
       zathura.enable = true;
-      zellij.enable = false;
       brave.enable = true;
       rofi.enable = true;
-      kakoune.enable = true;
+      kakoune.enable = false;
       mpv.enable = true;
       home-manager.enable = true;
       alacritty.enable = true;
@@ -54,12 +50,5 @@
         enable = true;
         nix-direnv.enable = true;
       };
-    };
-
-    services = {
-      redshift.enable = true;
-      picom.enable = false;
-      flameshot.enable = true;
-      # polybar.enable = true;
     };
   }

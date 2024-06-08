@@ -1,12 +1,9 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
   {
     users.users.lokasku = {
       isNormalUser = true;
       extraGroups = [ "wheel" "networkmanager" ];
-      packages = with pkgs; [];
+      packages = [];
       shell = pkgs.fish;
     };
 

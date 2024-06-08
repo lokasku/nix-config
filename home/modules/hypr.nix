@@ -1,7 +1,6 @@
-{
-  inputs,
-  pkgs,
-  ...
+{ inputs
+, pkgs
+, ...
 }:
   {
     wayland.windowManager.hyprland = {
@@ -23,9 +22,6 @@
       env = __GLX_VENDOR_LIBRARY_NAME,nvidia
       env = LIBVA_DRIVER_NAME,nvidia
 
-      # exec-once=swaybg -i ~/wallpapers/grad.png
-      # exec-once=waybar
-
       # Submaps
       submap = resize
 
@@ -39,7 +35,15 @@
       submap = reset
 
       # Misc
-      bind = , Print, exec, grimshot copy area
+      windowrule=fakefullscreen, flameshot
+      windowrule=float,flameshot
+      windowrule=monitor 0,flameshot
+      windowrule=move 0 0,flameshot
+      windowrule=workspace 0,flameshot
+      windowrule=stayfocused,flameshot
+
+      # bind = , Print, exec, flameshot gui
+      bind = , Print, exec, grim -g "$(slurp -d)" - | wl-copy
 
       binde = , XF86MonBrightnessUp, exec, brightnessctl s 5%+
       binde = , XF86MonBrightnessDown, exec, brightnessctl s 5%-
@@ -56,10 +60,10 @@
       bindm = SHIFT, ALT_L, resizewindow
 
       # Launch
-      bind = CTRL, p, exec, rofi -show drun -matching fuzzy
-      binde = CTRL, t, exec, alacritty
-      bind = CTRL, b, exec, brave
-      bind = CTRL, n, exec, code
+      bind = CTRL SHIFT, p, exec, rofi -show drun -matching fuzzy
+      binde = CTRL SHIFT, t, exec, alacritty
+      bind = CTRL SHIFT, b, exec, brave
+      bind = CTRL SHIFT, n, exec, code
 
       # Audio
       bindel=, XF86AudioRaiseVolume, exec, pamixer -u && pamixer -i 2
@@ -67,23 +71,23 @@
       bindel=, XF86AudioMute, exec, pamixer -m
 
       # Resize Window
-      bind = ALT, r, submap, resize
+      bind = SUPER ALT, r, submap, resize
 
       # Move Window
-      binde = ALT, k, movefocus, u
-      binde = ALT, j, movefocus, d
-      binde = ALT, h, movefocus, l
-      binde = ALT, l, movefocus, r
+      binde = SUPER ALT, k, movefocus, u
+      binde = SUPER ALT, j, movefocus, d
+      binde = SUPER ALT, h, movefocus, l
+      binde = SUPER ALT, l, movefocus, r
 
-      binde = ALT SHIFT, k, movewindow, u
-      binde = ALT SHIFT, j, movewindow, d
-      binde = ALT SHIFT, h, movewindow, l
-      binde = ALT SHIFT, l, movewindow, r
+      binde = SUPER SHIFT, k, movewindow, u
+      binde = SUPER SHIFT, j, movewindow, d
+      binde = SUPER SHIFT, h, movewindow, l
+      binde = SUPER SHIFT, l, movewindow, r
 
-      binde = ALT CTRL, k, swapwindow, u
-      binde = ALT CTRL, j, swapwindow, d
-      binde = ALT CTRL, h, swapwindow, l
-      binde = ALT CTRL, l, swapwindow, r
+      binde = SUPER CTRL, k, swapwindow, u
+      binde = SUPER CTRL, j, swapwindow, d
+      binde = SUPER CTRL, h, swapwindow, l
+      binde = SUPER CTRL, l, swapwindow, r
 
       # Window Rules
       windowrule = noblur, ^(brave)$
@@ -91,13 +95,12 @@
       windowrule = opaque, ^(rofi)$
       windowrulev2 = noshadow, floating:1
       windowrulev2 = float, center, title:^(popup)$
-      # windowrulev2 = rounding 20, floating:true
 
       # Workspaces
       binde = SUPER, h, workspace, -1
       binde = SUPER, l, workspace, +1
-      binde = SUPER SHIFT, h, movetoworkspace, -1
-      binde = SUPER SHIFT, l, movetoworkspace, +1
+      binde = SUPER, j, movetoworkspace, -1
+      binde = SUPER, k, movetoworkspace, +1
 
       bind = SUPER, code:10, workspace, 1
       bind = SUPER, code:11, workspace, 2
@@ -140,8 +143,8 @@
           gaps_in=2
           gaps_out=1
 
-          col.active_border=0xff3d3d3d
-          col.inactive_border=0xff303030
+          col.active_border=0xff343434
+          col.inactive_border=0xff292929
 
           no_focus_fallback = true
       }
@@ -174,7 +177,7 @@
       }
 
       dwindle {
-          no_gaps_when_only=true
+          # no_gaps_when_only=true
       }
 
       misc {

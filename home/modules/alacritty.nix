@@ -1,9 +1,4 @@
 {
-  lib,
-  pkgs,
-  ...
-}:
-{
   programs.alacritty = {
     settings = {
       window = {
@@ -12,8 +7,8 @@
         opacity = 0.9;
         title = "Alacritty";
         padding = {
-          x = 15;
-          y = 15;
+          x = 10;
+          y = 9;
         };
         dynamic_padding = true;
       };
@@ -37,8 +32,8 @@
       };
       colors = {
         primary = {
-          background = "#161616";  # Dark Grey, mais plus clair que #151515
-          foreground = "#F0E6FF";  # Light Lavender, très clair pour un bon contraste
+          background = "#161616";
+          foreground = "#F0E6FF";
         };
         bright = {
           black = "#000000";
@@ -64,4 +59,3 @@
     };
   };
 }
-

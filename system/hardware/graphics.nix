@@ -1,7 +1,6 @@
-{ ... }:
-  {
-    hardware = {
-      opengl.enable = true;
-      nvidia.modesetting.enable = true;
-    };
-  }
+{
+  hardware = {
+    opengl.enable = true;
+    nvidia.modesetting.enable = true;
+  };
+}

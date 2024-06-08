@@ -1,7 +1,6 @@
-{ ... }:
-   {
-     networking.hostName = "nixsku";
-     networking.networkmanager.enable = true;
+{
+  networking.hostName = "nixsku";
+  networking.networkmanager.enable = true;
 
-     services.openssh.enable = true;
-   }
+  services.openssh.enable = true;
+}

@@ -4,7 +4,7 @@
     settings = [{
       layer = "top";
       position = "top";
-      height = 30;
+      height = 20;
       output = ["eDP-1"];
       modules-left = [ "hyprland/workspaces" ];
       # modules-center = [ "hyprland/window" ];
@@ -34,7 +34,7 @@
     style = ''
     * {
         background-color: transparent;
-        margin: 2px 5px 2px 3px;
+        margin: 1px 5px 1px 3px;
     }
     #workspaces button {
         font-family: "PragmataPro Liga";

@@ -1,12 +1,7 @@
 {
-  pkgs,
-  systemSettings,
-  ...
-}:
-  {
-    imports = [
-      ./audio.nix
-      ./bluetooth.nix
-      ./graphics.nix
-    ];
-  }
+  imports = [
+    ./audio.nix
+    ./bluetooth.nix
+    ./graphics.nix
+  ];
+}

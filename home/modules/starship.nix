@@ -1,26 +1,19 @@
-{
-  lib,
-  ...
-}:
+{ lib, ... }:
   let sep = " [@](#939393)"; in
   {
     programs.starship.settings = {
       format = lib.strings.concatStrings [
         "$directory"
-        " \\$ $battery"
-        "${sep}"
-        "$time"
-        "${sep}"
+        # " \\$ $battery"
+        # "${sep}"
+        # " $time"
+        # "${sep}"
         "  "
         "$nix_shell"
         "$rust"
         "$ocaml"
       ];
       add_newline = false;
-      "custom/sep" = {
-        format = " @ ";
-        style = "#939393";
-      };
       directory = {
         truncation_length = 1;
         format = "[$path]($style)[$read_only](#ff9770)";

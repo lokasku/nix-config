@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
   {
     boot.kernelParams = [ "psmouse.synaptics_intertouch=0" ];
     boot.kernelPackages = pkgs.linuxPackages_5_15;

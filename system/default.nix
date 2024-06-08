@@ -1,7 +1,6 @@
-{
-  pkgs,
-  systemSettings,
-  ...
+{ pkgs
+, systemSettings
+, ...
 }:
   {
     imports = [
