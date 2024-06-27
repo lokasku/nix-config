@@ -14,14 +14,9 @@
         cargo
         prismlauncher
         (pkgs.callPackage ./modules/pragmata.nix {})
-        (nerdfonts.override {
-          fonts = ["MPlus"];
-        })
         neofetch
         brightnessctl
-        sway-contrib.grimshot
         wl-clipboard
-        grim slurp
       ];
     
       sessionVariables.EDITOR = "code";
