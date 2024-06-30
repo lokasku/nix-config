@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{ pkgs
+, inputs
+, system
+, ...
+}:
   {
     nixpkgs.config.allowUnfree = true;
 
@@ -16,10 +20,10 @@
         (pkgs.callPackage ./modules/pragmata.nix {})
         neofetch
         brightnessctl
-        wl-clipboard
+        inputs.vide.packages.${system}.vide
       ];
     
-      sessionVariables.EDITOR = "code";
+      sessionVariables.EDITOR = "vide";
     };
 
     xsession.enable = true;
@@ -27,13 +31,13 @@
     fonts.fontconfig.enable = true;
 
     programs = {
+      btop.enable = true;
       waybar.enable = true;
       hyprlock.enable = true;
       vscode.enable = true;
       zathura.enable = true;
       brave.enable = true;
       rofi.enable = true;
-      kakoune.enable = false;
       mpv.enable = true;
       home-manager.enable = true;
       alacritty.enable = true;

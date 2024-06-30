@@ -36,8 +36,8 @@
           foreground = "#F0E6FF";
         };
         bright = {
-          black = "#000000";
-          red = "#ff6961";
+          black = "#f2f2f7";
+          red = "#ff6861";
           green = "#0cff86";
           yellow = "#fff261";
           blue = "#9b99ff";

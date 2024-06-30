@@ -8,10 +8,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    vide.url = "github:lokasku/vide";
   };
 
-  outputs =
+  outputs = 
     { nixpkgs, home-manager, ... }@inputs:
+   let
+     system = "x86_64-linux";
+   in
     {
       nixosConfigurations.nixsku = nixpkgs.lib.nixosSystem {
         modules = [ ./system ];
@@ -23,10 +27,10 @@
 
       homeConfigurations.lokasku = home-manager.lib.homeManagerConfiguration {
 
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = nixpkgs.legacyPackages.${system};
 
         extraSpecialArgs = {
-          inherit inputs;
+          inherit inputs system;
         };
 
         modules = [ ./home ];

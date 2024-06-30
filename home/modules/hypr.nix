@@ -42,14 +42,14 @@
       windowrule=workspace 0,flameshot
       windowrule=stayfocused,flameshot
 
-      # bind = , Print, exec, flameshot gui
-      bind = , Print, exec, grim -g "$(slurp -d)" - | wl-copy
-
       binde = , XF86MonBrightnessUp, exec, brightnessctl s 5%+
       binde = , XF86MonBrightnessDown, exec, brightnessctl s 5%-
 
       binde = , XF86KbdBrightnessUp, exec, brightnessctl --device 'asus::kbd_backlight' s 1+
       binde = , XF86KbdBrightnessDown, exec, brightnessctl --device 'asus::kbd_backlight' s 1-
+
+      bind = SUPER, f, exec, hyprctl keyword input:kb_layout fr
+      bind = SUPER, u, exec, hyprctl keyword input:kb_layout us
 
       bind = SUPER, q, exec, poweroff
       bind = SUPER, r, exec, reboot
